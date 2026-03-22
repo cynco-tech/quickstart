@@ -13,7 +13,7 @@
  * Run: npm run example:errors
  */
 
-import Cynco from "cynco";
+import Cynco from "@cynco/sdk";
 
 const cynco = new Cynco({
   apiKey: process.env.CYNCO_API_KEY,

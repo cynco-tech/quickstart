@@ -7,7 +7,7 @@
  * Run: npm run example:list
  */
 
-import Cynco from "cynco";
+import Cynco from "@cynco/sdk";
 
 // Initialize the client with your API key.
 // The SDK reads from CYNCO_API_KEY by default, but you can pass it explicitly.

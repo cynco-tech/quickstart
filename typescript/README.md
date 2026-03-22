@@ -135,7 +135,7 @@ Key concepts:
 The `cynco` package provides typed methods for every API endpoint:
 
 ```typescript
-import Cynco from "cynco";
+import Cynco from "@cynco/sdk";
 
 const cynco = new Cynco({ apiKey: process.env.CYNCO_API_KEY });
 

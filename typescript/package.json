@@ -14,7 +14,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "cynco": "^1.0.0"
+    "@cynco/sdk": "^1.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.0",

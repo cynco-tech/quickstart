@@ -15,7 +15,7 @@
  */
 
 import express, { type Request, type Response } from "express";
-import Cynco from "cynco";
+import Cynco from "@cynco/sdk";
 
 const app = express();
 const port = process.env.PORT ?? 3456;
