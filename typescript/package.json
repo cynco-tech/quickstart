@@ -1,0 +1,26 @@
+{
+  "name": "cynco-quickstart-typescript",
+  "version": "1.0.0",
+  "description": "Cynco API quickstart examples in TypeScript",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "example:list": "tsx src/01-list-invoices.ts",
+    "example:create": "tsx src/02-create-customer.ts",
+    "example:pagination": "tsx src/03-pagination.ts",
+    "example:errors": "tsx src/04-error-handling.ts",
+    "example:webhooks": "tsx src/05-webhooks.ts",
+    "example:reports": "tsx src/06-reports.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "cynco": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "express": "^5.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

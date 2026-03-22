@@ -1,0 +1,52 @@
+name: Validate Examples
+
+on:
+  pull_request:
+    paths:
+      - "public/quickstart/**"
+
+jobs:
+  typecheck-typescript:
+    name: TypeScript Type Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: public/quickstart/typescript
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+  validate-python:
+    name: Python Syntax Check
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: public/quickstart/python
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compile all Python files
+        run: |
+          for file in *.py; do
+            echo "Checking $file..."
+            python -m py_compile "$file"
+          done
+
+      - name: Install dependencies and check imports
+        run: |
+          pip install -r requirements.txt
+          python -c "import requests; print(f'requests {requests.__version__}')"
+          python -c "import flask; print(f'flask {flask.__version__}')"
